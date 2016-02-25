@@ -1,0 +1,29 @@
+{
+  "name": "lao-utils",
+  "version": "0.0.1",
+  "description": "utils",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giscafer/lao-utils.git"
+  },
+  "keywords": [
+    "utils"
+  ],
+  "author": "Nickbing Lao <giscafer@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/giscafer/lao-utils/issues"
+  },
+  "homepage": "https://github.com/giscafer/lao-utils#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
