@@ -10,8 +10,10 @@
 **AMD/CMD、浏览器环境**
 
 	引入dist目录下源码文件
-	
+
 ## 函数
+
+- `uuid()` 	&nbsp;生成一个uuid串（伪guid）
 - `is(x,y)` 	&nbsp;比较x和y是否相等
 - `isInteger(value)` 	&nbsp;是否是整数
 - `isNumber(value)` 	&nbsp;是否是数字

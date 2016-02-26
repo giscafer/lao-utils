@@ -17,6 +17,15 @@
 })('laoUtils', function() {
     var LaoUtils = function() {};
     /**
+     * 通过链接随机的十六进制数生成一个伪GUID.
+     */
+    LaoUtils.prototype.uuid=function(){
+        var  V4=function() {
+           return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+        };
+        return (V4()+V4()+"-"+V4()+"-"+V4()+"-"+V4()+"-"+V4()+V4()+V4());
+    };
+    /**
      * ES5中使用全等===会出现以下情况
      * +0 === -0 //true
      * NaN === NaN // false

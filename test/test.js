@@ -1,6 +1,12 @@
 var should=require('chai').should();
 var laoUtils=require('../index');
 describe('test.js',function(){
+	describe('#uuid()',function(){
+		it('generate a uuid',function(done){
+			laoUtils.uuid().should.be.length(36);
+			done();
+		});
+	});
 	describe('#is()',function(){
 		it('should be Same-value equality',function(done){
 			var flag=laoUtils.is(1,2);
