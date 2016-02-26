@@ -1,6 +1,7 @@
 # lao-utils
 [![Build Status](https://travis-ci.org/giscafer/lao-utils.svg?branch=master)](https://travis-ci.org/giscafer/lao-utils)
 [![Coverage Status](https://coveralls.io/repos/github/giscafer/lao-utils/badge.svg?branch=master)](https://coveralls.io/github/giscafer/lao-utils?branch=master)
+
 常用工具集函数
 
 ## 使用
