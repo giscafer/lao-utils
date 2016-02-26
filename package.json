@@ -24,6 +24,11 @@
   "homepage": "https://github.com/giscafer/lao-utils#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
     "mocha": "^2.4.5"
   }
 }

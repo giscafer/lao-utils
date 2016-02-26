@@ -49,4 +49,15 @@ describe('test.js',function(){
 			done();
 		});
 	});
+	describe('#date()',function(){
+		it('the date should be formatting',function(done){
+			laoUtils.date('yyyy-MM-dd',1456491495000).should.contains('2016-02-26');
+			laoUtils.date('yyyy/MM/dd',1456491495000).should.contains('2016/02/26');
+			laoUtils.date('yyyy年MM月dd日',1456491495000).should.contains('2016年02月26日');
+			laoUtils.date('yyyy-MM-dd HH:mm:ss',1456491495000).should.contains('2016-02-26 20:58:15');
+			laoUtils.date('yyyyMMdd',1456491495000).should.contains('20160226');
+			laoUtils.date('yyyy年MM月dd日').should.contains('年');
+			done();
+		});
+	});
 });

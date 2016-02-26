@@ -2,11 +2,18 @@
 
 常用工具集函数
 
-### 安装
-	支持Node.js、AMD/CMD、浏览器环境
+## 使用
+**Node.js**
+	
+	npm install lao-utils --save
 
-### 函数
-- `is(x,y)` 比较x和y相等
-- `isInteger(value)` 是否是整数
-- `isNumber(value)` 是否是数字
-- `isNaN(value)` 是否是`NaN`
+**AMD/CMD、浏览器环境**
+
+	引入dist目录下源码文件
+	
+## 函数
+- `is(x,y)` 	&nbsp;比较x和y是否相等
+- `isInteger(value)` 	&nbsp;是否是整数
+- `isNumber(value)` 	&nbsp;是否是数字
+- `isNaN(value)` 	&nbsp;是否是`NaN`
+- `date(format,timestamp)` 	&nbsp;格式化日期 **eg:** `laoUtils.date('yyyy-MM-dd'); //2016-02-26`
