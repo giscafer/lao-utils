@@ -4,7 +4,9 @@
   "description": "utils",
   "main": "index.js",
   "directories": {
-    "test": "test"
+    "test": "test",
+    "mocha": "./node_modules/.bin/mocha -u bdd 'test/**/*.@(js|jsx)'",
+    "cov": "istanbul cover ./node_modules/mocha/bin/_mocha test/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,11 +26,13 @@
   "homepage": "https://github.com/giscafer/lao-utils#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "coveralls": "^2.11.6",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.3",
+    "istanbul": "^0.4.2",
     "mocha": "^2.4.5"
   }
 }

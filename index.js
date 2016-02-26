@@ -19,11 +19,11 @@
     /**
      * 通过链接随机的十六进制数生成一个伪GUID.
      */
-    LaoUtils.prototype.uuid=function(){
-        var  V4=function() {
-           return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    LaoUtils.prototype.uuid = function() {
+        var V4 = function() {
+            return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
         };
-        return (V4()+V4()+"-"+V4()+"-"+V4()+"-"+V4()+"-"+V4()+V4()+V4());
+        return (V4() + V4() + "-" + V4() + "-" + V4() + "-" + V4() + "-" + V4() + V4() + V4());
     };
     /**
      * ES5中使用全等===会出现以下情况
@@ -70,6 +70,136 @@
     LaoUtils.prototype.isNaN = function(value) {
         return (typeof value === 'number' && isNaN(value));
     };
+
+    /**
+     * 是否为字符串
+     *
+     * @param {Mixed} str
+     * @return {Boolean}
+     */
+    LaoUtils.prototype.isString = function(value) {
+        return (typeof value === 'string');
+    };
+    /**
+     * 复制对象，浅拷贝
+     *
+     * @param {Object} obj
+     * @return {Object} 返回新对象
+     */
+    LaoUtils.prototype.copyObject = function(obj) {
+        return JSON.parse(JSON.stringify(obj));
+    };
+    /**
+     * 判断一个对象是否为Dom对象
+     * @param   {Object}   obj
+     * @return  {Boolean}
+     */
+    LaoUtils.prototype.isDom = function(obj) {
+        return obj && obj.nodeType === 1 && typeof(obj.nodeName) == 'string';
+    };
+    /**
+     * 对一个object进行深度拷贝
+     * @param {*} source 需要进行拷贝的对象
+     * @return {*} 拷贝后的新对象
+     */
+    LaoUtils.prototype.clone = function(source) {
+        var BUILTIN_OBJECT = {
+            '[object HTMLHeadElement]': 0,
+        };
+        var objToString = Object.prototype.toString;
+
+        if (typeof source == 'object' && source !== null) {
+            var result = source;
+            if (source instanceof Array) {
+                result = [];
+                for (var i = 0, len = source.length; i < len; i++) {
+                    result[i] = clone(source[i]);
+                }
+            } else if (!BUILTIN_OBJECT[objToString.call(source)] && !this.isDom(source)) {
+                result = {};
+                for (var key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        result[key] = clone(source[key]);
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        return source;
+    };
+    /**
+     * 合并对象，同样属性会覆盖
+     *
+     * @param {Object} a
+     * @param {Object} b
+     * @param {Object} c
+     * @return {Object}
+     */
+    LaoUtils.prototype.merge = function() {
+        var ret = {};
+        for (var i = 0; i < arguments.length; i++) {
+            var obj = arguments[i];
+            Object.keys(obj).forEach(function(key) {
+                ret[key] = obj[key];
+            });
+        }
+        return ret;
+    };
+    /**
+     * 将一组值转换为数组
+     * @return  {Array} 
+     */
+    LaoUtils.prototype.arrayOf = function() {
+        return [].slice.call(arguments);
+    };
+    /**
+     * 数组arr是否包含给定的值value
+     * @param   {Array}     arr  
+     * @param   {Mixed}    value
+     * @return  {Boolean}
+     */
+    LaoUtils.prototype.includes = function(arr, value) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] === value) return true;
+        }
+        return false;
+    };
+    /**
+     * 判断一个字符串是否被包含在另一个字符串中
+     * @param   {String}   str  
+     * @param   {Mixed}    value
+     * @return  {Boolean}
+     */
+    LaoUtils.prototype.contains = function(str, value) {
+        return str.indexOf(value) > -1 ? true : false;
+    };
+    /**
+     * 判断arr是否为数组
+     * @param   {Array}     arr  
+     * @return  {Boolean}
+     */
+    LaoUtils.prototype.isArray = function(arr) {
+        return (Object.prototype.toString.call(arr) === '[object Array]');
+    };
+    /**
+     * 构造类继承关系（clazz继承于baseClazz）
+     * @param {Function} clazz 源类
+     * @param {Function} baseClazz 基类
+     */
+    LaoUtils.prototype.inherits = function(clazz, baseClazz) {
+        var clazzPrototype = clazz.prototype;
+
+        function F() {}
+        F.prototype = baseClazz.prototype;
+        clazz.prototype = new F();
+
+        for (var prop in clazzPrototype) {
+            clazz.prototype[prop] = clazzPrototype[prop];
+        }
+        clazz.constructor = clazz;
+    };
     /**
      * 格式化日期时间
      * thanks for fullCalender.js
@@ -78,7 +208,7 @@
      * @param {Obejct} options
      * @return {String}
      */
-    LaoUtils.prototype.date = function(format, timestamp,options) {
+    LaoUtils.prototype.date = function(format, timestamp, options) {
         var defaults = {
             yearNames: ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
             monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],

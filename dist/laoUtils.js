@@ -70,6 +70,75 @@
     LaoUtils.prototype.isNaN = function(value) {
         return (typeof value === 'number' && isNaN(value));
     };
+
+    /**
+     * 是否为字符串
+     *
+     * @param {Mixed} str
+     * @return {Boolean}
+     */
+    LaoUtils.isString = function (value) {
+      return (typeof value === 'string');
+    };
+    /**
+     * 复制对象，浅拷贝
+     *
+     * @param {Object} obj
+     * @return {Object} 返回新对象
+     */
+    LaoUtils.cloneObject = function (obj) {
+      return JSON.parse(JSON.stringify(obj));
+    };
+
+    /**
+     * 合并对象，同样属性会覆盖
+     *
+     * @param {Object} a
+     * @param {Object} b
+     * @param {Object} c
+     * @return {Object}
+     */
+    LaoUtils.merge = function () {
+      var ret = {};
+      for (var i = 0; i < arguments.length; i++) {
+        var obj = arguments[i];
+        Object.keys(obj).forEach(function (key) {
+          ret[key] = obj[key];
+        });
+      }
+      return ret;
+    };
+    /**
+     * 将一组值转换为数组
+     * @return  {Array} 
+     */
+    LaoUtils.arrayOf=function(){
+      return [].slice.call(arguments);
+    };
+    /**
+     * 数组arr是否包含给定的值value
+     * @param   {Array}     arr  
+     * @param   {Mixed}    value
+     * @return  {Boolean}
+     */
+    LaoUtils.includes=function(arr,value){
+        for (var i = 0; i < arr.length; i++) {
+            if(arr[i]===value) return true;
+        }
+        return false;
+    };
+    /**
+     * 判断一个字符串是否被包含在另一个字符串中
+     * @param   {String}   str  
+     * @param   {Mixed}    value
+     * @return  {Boolean}
+     */
+    LaoUtils.contains=function(str,value){
+        return str.indexOf(value)>-1?true:false;
+    };
+    LaoUtils.isArray=function(arr) {
+        return (Object.prototype.toString.call(arr) === '[object Array]');
+    }；
     /**
      * 格式化日期时间
      * thanks for fullCalender.js
