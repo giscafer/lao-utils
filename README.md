@@ -2,6 +2,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![NPM version][npm-image]][npm-url]
+
 常用工具集函数
 
 ## 使用
