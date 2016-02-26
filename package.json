@@ -1,6 +1,6 @@
 {
   "name": "lao-utils",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "常用工具集函数",
   "main": "index.js",
   "directories": {

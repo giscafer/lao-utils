@@ -1,7 +1,7 @@
 # lao-utils
-[![Build Status](https://travis-ci.org/giscafer/lao-utils.svg?branch=master)](https://travis-ci.org/giscafer/lao-utils)
-[![Coverage Status](https://coveralls.io/repos/github/giscafer/lao-utils/badge.svg?branch=master)](https://coveralls.io/github/giscafer/lao-utils?branch=master)
-
+[![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![NPM version][npm-image]][npm-url]
 常用工具集函数
 
 ## 使用
@@ -30,3 +30,15 @@
 - `contains(value)` 	&nbsp;判断一个字符串是否被包含在另一个字符串中
 - `isArray(arr)` 	&nbsp;判断arr是否为数组
 - `inherits(clazz, baseClazz)` 	&nbsp;构造类继承关系（clazz继承于baseClazz）
+
+
+## License
+
+MIT
+
+[npm-image]: https://img.shields.io/npm/v/lao-utils.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/lao-utils
+[coveralls-image]: https://coveralls.io/repos/github/giscafer/lao-utils/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/giscafer/lao-utils?branch=master
+[travis-image]: https://travis-ci.org/giscafer/lao-utils.svg?branch=master
+[travis-url]: https://travis-ci.org/giscafer/lao-utils
