@@ -1,0 +1,10 @@
+.DS_Store
+.vscode/
+node_modules/
+coverage/
+dist/
+gulpfile.js
+npm-debug.log
+.coveralls.yml
+.travis.yml
+
