@@ -1,0 +1,9 @@
+language: node_js
+repo_token: BXLnHc7e1F0GG5v2FvKkyCkg2aYoAbnHh
+# services: mongodb
+node_js:
+  - stable
+  - 5.3
+sudo: false
+script: npm run mocha
+after_script: npm run cov
