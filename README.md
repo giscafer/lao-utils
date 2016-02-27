@@ -3,7 +3,7 @@
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![NPM version][npm-image]][npm-url]
 
-常用工具集函数
+JavaScript常用函数工具集
 
 ## 使用
 **Node.js**

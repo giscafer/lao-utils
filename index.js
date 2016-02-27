@@ -237,7 +237,7 @@
         /**
          * ISO 8601.
          */
-        function iso8601Week(date) {
+        var iso8601Week=function(date) {
             var time;
             var checkDate = new Date(date.getTime());
 
@@ -248,7 +248,7 @@
             checkDate.setMonth(0); // Compare with Jan 1
             checkDate.setDate(1);
             return Math.floor(Math.round((time - checkDate) / 86400000) / 7) + 1;
-        }
+        };
 
         var zeroPad = function(n) {
             return (n < 10 ? '0' : '') + n;
