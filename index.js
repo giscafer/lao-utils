@@ -98,7 +98,7 @@
         return obj && obj.nodeType === 1 && typeof(obj.nodeName) == 'string';
     };
     /**
-     * 对一个object进行深度拷贝
+     * 对一个object进行深度拷贝,会将原型上的继承属性也拷贝
      * @param {*} source 需要进行拷贝的对象
      * @return {*} 拷贝后的新对象
      */
@@ -118,9 +118,7 @@
             } else if (!BUILTIN_OBJECT[objToString.call(source)] && !this.isDom(source)) {
                 result = {};
                 for (var key in source) {
-                    if (source.hasOwnProperty(key)) {
-                        result[key] = clone(source[key]);
-                    }
+                    result[key] = this.clone(source[key]);
                 }
             }
 
@@ -184,7 +182,7 @@
         return (Object.prototype.toString.call(arr) === '[object Array]');
     };
     /**
-     * 构造类继承关系（clazz继承于baseClazz）
+     * 构造类继承关系（clazz继承于baseClazz）,原型链上的属性和方法
      * @param {Function} clazz 源类
      * @param {Function} baseClazz 基类
      */
@@ -200,6 +198,24 @@
         }
         clazz.constructor = clazz;
     };
+    /**
+     * 源对象的所有属性复制到目标对象，如果原对象的属性未定义（undefined），则不会复制
+     * @param   {Object}       destination 
+     * @param   {Object}       source      
+     * @return  {Object}            
+     */
+     LaoUtils.prototype.extend=function(destination, source) {
+        destination = destination || {};
+        if (source) {
+            for (var property in source) {
+                var value = source[property];
+                if (value !== undefined) {
+                    destination[property] = value;
+                }
+            }
+        }
+        return destination;
+    }
     /**
      * 格式化日期时间
      * thanks for fullCalender.js
