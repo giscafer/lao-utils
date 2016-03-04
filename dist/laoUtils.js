@@ -17,6 +17,32 @@
 })('laoUtils', function() {
     var LaoUtils = function() {};
     /**
+     * 去除数组中假值元素，比如undefined,null,0,"",NaN都是假值
+     * @param   {Array}    arr
+     * @return  {Array} 
+     */
+    LaoUtils.prototype.compact=function(arr){
+        var index=-1,
+            resIndex=-1,
+            result=[],
+            len=arr?arr.length:0;
+        while(++index<len){
+            var value=arr[index];
+            if(value){
+                result[++resIndex]=value;
+            }
+        }
+        return result;
+    };
+    /**
+     * 非null,undefined和空字符以外的值
+     * @param   {Mixed}    value
+     * @return  {Boolean}        
+     */
+    LaoUtils.prototype.isExpect=function(value){
+        return value!==null && value!==undefined && value!=='';
+    };
+    /**
      * 通过链接随机的十六进制数生成一个伪GUID.
      */
     LaoUtils.prototype.uuid = function() {

@@ -5,6 +5,26 @@
 var should=require('chai').should();
 var laoUtils=require('../index');
 describe('test.js',function(){
+	describe('#compact()',function(){
+		it('Returns the new array of filtered values',function(done){
+			laoUtils.compact([null,1,2,undefined,0]).should.be.length(2);
+			laoUtils.compact([null,1,2,undefined,0,'0']).should.be.length(3);
+			laoUtils.compact([null,NaN,2,undefined,0,'0']).should.be.length(2);
+			laoUtils.compact([null,NaN,'',undefined,0,'0']).should.be.length(1);
+			done();
+		});
+	});
+	describe('#isExpect()',function(){
+		it('should be a isExpect value',function(done){
+			laoUtils.isExpect('').should.be.false;
+			laoUtils.isExpect(null).should.be.false;
+			laoUtils.isExpect(undefined).should.be.false;
+			laoUtils.isExpect(0).should.be.true;
+			laoUtils.isExpect('sss').should.be.true;
+			laoUtils.isExpect(12).should.be.true;
+			done();
+		});
+	});
 	describe('#uuid()',function(){
 		it('generate a uuid',function(done){
 			laoUtils.uuid().should.be.length(36);
