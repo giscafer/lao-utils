@@ -15,6 +15,8 @@ JavaScript常用函数工具集
 	引入dist目录下源码文件
 
 ## 函数
+	
+	19个常用函数
 
 - `uuid()` 	&nbsp;生成一个uuid串（伪guid）
 - `is(x,y)` 	&nbsp;比较字符x和字符y是否相等
@@ -39,8 +41,8 @@ JavaScript常用函数工具集
 - `isArray(arr)` 	&nbsp;判断arr是否为数组
 - `inherits(clazz, baseClazz)` 	&nbsp;构造类继承关系（clazz继承于baseClazz）
 - `extend(des, source)` 	&nbsp;源对象`source`的所有属性复制到目标对象`des`（undefined属性不会被复制）
-- `compact()` 	&nbsp;去除数组中假值元素，比如`false`,`null`,`0`,`""`,`undefined`,和`NaN`都是假值
-- `isExpect()` 	&nbsp;是否为非null,undefined和空字符以外的值
+- `compact(array)` 	&nbsp;去除数组中假值元素，比如`false`,`null`,`0`,`""`,`undefined`,和`NaN`都是假值
+- `isExpect(value)` 	&nbsp;是否为非null,undefined和空字符以外的值
 
 ## License
 
