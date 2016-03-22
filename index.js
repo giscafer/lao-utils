@@ -1,5 +1,6 @@
 /**
  * 工具集
+ * https://github.com/giscafer/lao-utils
  * @author giscafer
  */
 !(function(name, definition) {
@@ -130,7 +131,7 @@
      */
     LaoUtils.prototype.clone = function(source) {
         var BUILTIN_OBJECT = {
-            '[object HTMLHeadElement]': 0,
+            '[object HTMLHeadElement]': 0
         };
         var objToString = Object.prototype.toString;
 
