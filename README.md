@@ -1,5 +1,5 @@
 # lao-utils
-[![Build Status][https://travis-ci.org/giscafer/lao-utils.svg?branch=master]][travis-url]
+[![Build Status](https://travis-ci.org/giscafer/lao-utils.svg?branch=master)][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![NPM version][npm-image]][npm-url]
 
