@@ -1,5 +1,5 @@
 # lao-utils
-[![Build Status][travis-image]][travis-url]
+[![Build Status][https://travis-ci.org/giscafer/lao-utils.svg?branch=master]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![NPM version][npm-image]][npm-url]
 
@@ -16,8 +16,10 @@ JavaScript常用函数工具集
 
 ## 函数
 	
-	19个常用函数
+	20个常用函数
 
+- `isIE(ver)` 	&nbsp;判断是否是IE浏览器
+ **eg:** `laoUtils.isIE(8);//判断是否是IE8` `laoUtils.isIE();//判断是否是IE`
 - `uuid()` 	&nbsp;生成一个uuid串（伪guid）
 - `is(x,y)` 	&nbsp;比较字符x和字符y是否相等
 **eg:** `特殊例子：laoUtils.is(-0,+0); //false`,`laoUtils.is(NaN,NaN); //true`

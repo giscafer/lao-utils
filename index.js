@@ -18,6 +18,16 @@
 })('laoUtils', function() {
     var LaoUtils = function() {};
     /**
+     * 判断是否是IE浏览器
+     * @param   {String|Number}      ver IE版本
+     * @return  {Boolean}  
+     */
+    LaoUtils.prototype.isIE = function(ver){
+        var b = document.createElement('b')
+        b.innerHTML = '<!--[if IE ' + ver + ']><i></i><![endif]-->'
+        return b.getElementsByTagName('i').length === 1
+    };
+    /**
      * 去除数组中假值元素，比如undefined,null,0,"",NaN都是假值
      * @param   {Array}    arr
      * @return  {Array} 
