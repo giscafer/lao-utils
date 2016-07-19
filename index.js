@@ -28,6 +28,21 @@
         return b.getElementsByTagName('i').length === 1
     };
     /**
+     * 是否是浮点型
+     * @author giscafer
+     * @date    2016-07-19T15:49:44+0800
+     * @param   {String | Number}    val 
+     * @return  {Boolean}   
+     */
+    LaoUtils.prototype.isFloat=function(val){
+        val=Number(val);
+        if(isNaN(val)){
+            return false;
+        }else{
+            return val!==parseInt(val);
+        }
+    };
+    /**
      * 去除数组中假值元素，比如undefined,null,0,"",NaN都是假值
      * @param   {Array}    arr
      * @return  {Array} 
