@@ -16,7 +16,7 @@ JavaScript常用函数工具集
 
 ## 函数
 	
-	20个常用函数
+	21个常用函数
 
 - `isIE(ver)` 	&nbsp;判断是否是IE浏览器
  **eg:** `laoUtils.isIE(8);//判断是否是IE8` `laoUtils.isIE();//判断是否是IE`
