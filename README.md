@@ -2,6 +2,9 @@
 [![Build Status](https://travis-ci.org/giscafer/lao-utils.svg?branch=master)][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![NPM version][npm-image]][npm-url]
+[![NPM download](https://img.shields.io/npm/dt/lao-utils.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/lao-utils)
+[![NPM license](https://img.shields.io/npm/l/lao-utils.svg?style=flat-square)](https://www.npmjs.com/package/lao-utils)
+
 
 JavaScript常用函数工具集
 
