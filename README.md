@@ -52,7 +52,7 @@ JavaScript常用函数工具集
 
 ## License
 
-MIT
+MIT @giscafer
 
 [npm-image]: https://img.shields.io/npm/v/lao-utils.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/lao-utils
